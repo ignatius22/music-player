@@ -76,16 +76,20 @@ function updateProgressBar(e){
 		// delay switchingn duration element to avoid NAN 
 		if(durationSeconds){
 			durationEl.textContent = `${durationMinute}:${durationSeconds}`;
-		}
-		const durationMinute = Math.floor(currentTime / 60);
-		// console.log('minutes:', durationMinute)
+    }
+    
+
+		const currentMinute = Math.floor(currentTime / 60);
+		console.log('minutes:', currentMinute)
 		let currentSeconds = Math.floor(currentTime % 60);
 		if(currentSeconds < 10){
 			currentSeconds = `0${currentSeconds}`
-		}
+    }
+    console.log('seconds:', currentSeconds)
+    currentTimeEl.textContent = `${currentMinute}:${currentSeconds}`;
 	}
-	console.log('seconds:', currentSeconds)
-	currentTimeEl.textContent = `${currentMinute}:${currentSeconds}`;
+	
+	
 }
 
 
