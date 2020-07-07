@@ -14,7 +14,7 @@ This page is a basic music player design, this project has been an exercise of u
 
 ## Live Demo
 
-Live link here: ![](https://ignatius22.github.io/music-player/)
+Live link here: https://ignatius22.github.io/music-player/
 
 
 ## Authors
