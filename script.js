@@ -3,7 +3,7 @@ const progressContainer = document.getElementById('progress-container');
 const progress = document.getElementById('progress')
 const image = document.querySelector('img');
 const currentTimeEl = document.getElementById('current-time');
-const durationEl = document.getElementById('')
+const durationEl = document.getElementById('duration')
 const title = document.getElementById('title');
 const artist = document.getElementById('artist');
 const prevBtn = document.getElementById('prev');
@@ -60,11 +60,32 @@ function loadSongs(song) {
 function updateProgressBar(e){
 	if(isPlaying){
 	const {duration, currentTime} = e.srcElement;
-		console.log(duration,currentTime);
+		// console.log(duration,currentTime);
 		// update progress bar width
 		const progressPercentage = (currentTime / duration) * 100
 		progress.style.width = `${progressPercentage}%`
+		// calculate display for duration
+		const durationMinute = Math.floor(duration / 60);
+		console.log('minutes:', durationMinute)
+		let durationSeconds = Math.floor(duration % 60);
+		if(durationSeconds < 10){
+			durationSeconds = `0${durationSeconds}`
+		}
+		console.log('seconds:', durationSeconds)
+		
+		// delay switchingn duration element to avoid NAN 
+		if(durationSeconds){
+			durationEl.textContent = `${durationMinute}:${durationSeconds}`;
+		}
+		const durationMinute = Math.floor(currentTime / 60);
+		// console.log('minutes:', durationMinute)
+		let currentSeconds = Math.floor(currentTime % 60);
+		if(currentSeconds < 10){
+			currentSeconds = `0${currentSeconds}`
+		}
 	}
+	console.log('seconds:', currentSeconds)
+	currentTimeEl.textContent = `${currentMinute}:${currentSeconds}`;
 }
 
 
