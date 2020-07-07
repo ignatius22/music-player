@@ -14,7 +14,7 @@ This page is a basic music player design, this project has been an exercise of u
 
 ## Live Demo
 
-Live link here: https://rawcdn.githack.com/ignatius22/Responsive_Design/7ffbf9416436234415625d532273a23c230d311e/index.html
+Live link here: https://ignatius22.github.io/music-player/
 
 
 ## Authors
